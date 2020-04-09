@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class BrowserUtilities {
 
@@ -111,5 +112,14 @@ public class BrowserUtilities {
             e.printStackTrace();
         }
         return path;
+
+        /**
+         * This method will switch webdriver from current window
+         * to target window based on page title
+         *
+        * @param title of the window to switch
+         */
+
+
     }
 }

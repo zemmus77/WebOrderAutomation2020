@@ -1,5 +1,6 @@
 package com.weborders.tests;
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -12,12 +13,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-
 import java.io.IOException;
+
 
 public abstract class AbstractBaseTest {
 
-    protected WebDriver driver = Driver.getDriver();
+    protected WebDriver driver;
 
     protected static ExtentReports extentReports;
     protected static ExtentHtmlReporter extentHtmlReporter;
@@ -46,6 +47,7 @@ public abstract class AbstractBaseTest {
 
     @BeforeMethod
     public void setup() {
+        driver = Driver.getDriver();
         driver.get(ConfigurationReader.getProperty("url"));
         driver.manage().window().maximize();
     }
